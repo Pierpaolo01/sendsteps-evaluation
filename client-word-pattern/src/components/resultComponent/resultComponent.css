@@ -1,0 +1,17 @@
+.overlap-result__list {
+    color: black;
+    text-align: left;
+    text-transform: uppercase;
+}
+
+.overlap-result__button {
+    border: 4px solid var(--primary-color);
+    color: var(--primary-color);
+    background: white;
+    padding: 22px 92px;
+    border-radius: 38px;
+    font-weight: 700;
+    font-size: 18px;
+    cursor: pointer;
+    margin-top: 16px;
+}

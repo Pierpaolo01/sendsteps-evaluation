@@ -2,11 +2,13 @@ import './FormComponent.css'
 import {useState} from "react";
 import CardComponent from "../cardComponent/CardComponent";
 
-export default function FormComponent({onFormSubmit, onSuccessResponse}) {
+export default function FormComponent({onSuccessResponse}) {
     const [form, setForm ] = useState({
         mainWord: '',
         overlapWord: ''
     });
+
+    const [validationError, setValidationError] = useState([]);
 
     const handleFormChange = event => {
         const { name, value } = event.target;
@@ -19,17 +21,26 @@ export default function FormComponent({onFormSubmit, onSuccessResponse}) {
 
     const handleFormSubmit = async (event) => {
         event.preventDefault();
-        onFormSubmit(true);
 
-        setTimeout( () => {
-            onFormSubmit(false);
-            onSuccessResponse()
-        }, 200);
+        const response = await fetch('http://localhost:3333/api/word-overlap', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(form)
+        });
 
-        // const response = await fetch('http://localhost:3333/word-overlap', {
-        //     method: 'POST',
-        //     body: JSON.stringify(form)
-        // });
+        const data = await response.json();
+
+
+        if (response.status === 422) {
+            setValidationError(data);
+        }
+
+
+        if (response.status === 200) {
+            onSuccessResponse(data);
+        }
     }
 
 
@@ -42,10 +53,17 @@ export default function FormComponent({onFormSubmit, onSuccessResponse}) {
                         id="main-word"
                         type="text"
                         name="mainWord"
-                        placeholder="device"
+                        placeholder="e.g. device"
                         value={form.mainWord}
                         onChange={handleFormChange}
                     />
+                    <span className="word-form__validation-error">
+                        { validationError.map((err) => {
+                            if (err.param === 'mainWord' ) {
+                                return err.msg;
+                            }
+                        })}
+                    </span>
                 </div>
 
                 <div className="word-form__input-section">
@@ -54,12 +72,18 @@ export default function FormComponent({onFormSubmit, onSuccessResponse}) {
                         id="overlap-word"
                         type="text"
                         name="overlapWord"
-                        placeholder="ice"
+                        placeholder="e.g. ice"
                         value={form.overlapWord}
                         onChange={handleFormChange}
                     />
+                    <span className="word-form__validation-error">
+                        { validationError.map((err) => {
+                            if (err.param === 'overlapWord' ) {
+                                return err.msg;
+                            }
+                        })}
+                    </span>
                 </div>
-
                 <button className="word-form__submit" type="submit">
                     Submit
                 </button>

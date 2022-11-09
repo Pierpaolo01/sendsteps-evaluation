@@ -12,7 +12,7 @@
 
 @media (prefers-reduced-motion: no-preference) {
   .loading-animation {
-    animation: loading-animation-spin infinite 0.5s linear;
+    animation: loading-animation-spin 1s linear;
   }
 }
 
@@ -24,6 +24,7 @@
   align-items: center;
   justify-content: center;
   font-size: calc(10px + 2vmin);
+  font-family: Neue Haas Grotesk Display Pro ,sans-serif;
   color: white;
 }
 

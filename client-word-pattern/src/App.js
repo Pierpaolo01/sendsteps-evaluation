@@ -2,23 +2,22 @@ import './App.css';
 
 import FormComponent from "./components/formComponent/FormComponent";
 import {useState} from "react";
+import ResultComponent from "./components/resultComponent/ResultComponent";
 
 function App() {
-    const [loading, setLoading] = useState(false);
-    const [wordOverlapResult, setWordOverlapResult] = useState('');
+    const [wordOverlapResult, setWordOverlapResult] = useState([]);
 
     return (
     <div className="App">
       <header className="App-section">
-          <div className={loading ? "loading-animation" : ""}>
+          <div className={wordOverlapResult.length ? 'loading-animation' : ''}>
               {
-                  !wordOverlapResult ?
+                  !wordOverlapResult.length ?
                       <FormComponent
-                          onFormSubmit={(isLoading) =>  {setLoading(isLoading)} }
                           onSuccessResponse={ (responseData) => {setWordOverlapResult(responseData)}}
                       />
                       :
-                      <h1>SHESHH</h1>
+                      <ResultComponent overlappingLetters={wordOverlapResult} emitReturn={() => setWordOverlapResult([])} />
               }
           </div>
 
