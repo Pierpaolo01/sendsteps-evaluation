@@ -1,0 +1,22 @@
+.card-component {
+    border-radius: 16px;
+    box-shadow: 0 10px 86px -20px #C8D5F1;
+    overflow: hidden;
+    min-width: 624px;
+}
+
+.card-component__content {
+    background: white;
+}
+.card-component__heading {
+    background: var(--primary-color);
+    padding: 70px 115px;
+}
+.card-component__heading-title {
+    font-size: 32px;
+    margin: 8px 0;
+}
+
+.card-component__heading-description {
+    font-size: 16px;
+}
