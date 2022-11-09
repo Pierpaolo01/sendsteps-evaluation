@@ -1,0 +1,19 @@
+{
+  "name": "api-word-pattern",
+  "version": "1.0.0",
+  "description": "",
+  "main": "src/app.js",
+  "scripts": {
+    "start": "node src/app.js",
+    "start:dev": "nodemon src/app.js"
+  },
+  "author": "Pierpaolo Pascarella",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.18.2",
+    "express-validator": "^6.14.2"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.20"
+  }
+}
