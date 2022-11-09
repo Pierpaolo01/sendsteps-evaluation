@@ -2,7 +2,7 @@ import './FormComponent.css'
 import {useState} from "react";
 import CardComponent from "../cardComponent/CardComponent";
 
-export default function FormComponent({onFormSubmit, onSuccessResponse}) {
+export default function FormComponent({onSuccessResponse}) {
     const [form, setForm ] = useState({
         mainWord: '',
         overlapWord: ''
@@ -21,7 +21,6 @@ export default function FormComponent({onFormSubmit, onSuccessResponse}) {
 
     const handleFormSubmit = async (event) => {
         event.preventDefault();
-        onFormSubmit(true);
 
         const response = await fetch('http://localhost:3333/api/word-overlap', {
             method: 'POST',
