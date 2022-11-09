@@ -14,9 +14,14 @@
 }
 .card-component__heading-title {
     font-size: 32px;
+    font-weight: 700;
     margin: 8px 0;
 }
 
 .card-component__heading-description {
     font-size: 16px;
+}
+
+.card-component__content {
+    padding: 70px 115px;
 }
