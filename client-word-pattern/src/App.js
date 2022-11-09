@@ -1,15 +1,27 @@
 import './App.css';
 
-import CardComponent from "./components/cardComponent/CardComponent";
 import FormComponent from "./components/formComponent/FormComponent";
+import {useState} from "react";
 
 function App() {
-  return (
+    const [loading, setLoading] = useState(false);
+    const [wordOverlapResult, setWordOverlapResult] = useState('');
+
+    return (
     <div className="App">
       <header className="App-section">
-        <CardComponent title="Word patterns" description="Detect overlapping words within words">
-            <FormComponent />
-        </CardComponent>
+          <div className={loading ? "loading-animation" : ""}>
+              {
+                  !wordOverlapResult ?
+                      <FormComponent
+                          onFormSubmit={(isLoading) =>  {setLoading(isLoading)} }
+                          onSuccessResponse={ (responseData) => {setWordOverlapResult(responseData)}}
+                      />
+                      :
+                      <h1>SHESHH</h1>
+              }
+          </div>
+
       </header>
     </div>
   );
