@@ -3,11 +3,9 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "start:client": "PORT=3000 cd client-word-pattern && react-scripts start",
+    "start:client": "cd client-word-pattern && npm start",
     "start:api": "node api-word-pattern/src/app.js -p3333",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject",
+    "build": "cd client-word-pattern && react-scripts build",
     "start:dev": "nodemon api-word-pattern/src/app.js"
   },
   "dependencies": {

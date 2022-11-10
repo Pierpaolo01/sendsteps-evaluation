@@ -2,6 +2,6 @@
   "name": "client-word-pattern",
   "version": "1.0.0",
   "scripts": {
-    "start:client": "PORT=3000 react-scripts start"
+    "start:client": "react-scripts start PORT=3000"
   }
 }
