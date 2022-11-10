@@ -4,7 +4,7 @@ Firstly thank you for taking the time to view this project!
 You are viewing this in gitfront.io console. (which ensures this private repository cannot be seen by people without this URL)
 therefore step 1 is to clone this project to your local machine
 
-`git clone CLONE_URL` (if you are downloading the files from the email you can skip this step)
+`git clone CLONE_URL` (if you are downloading the zip files from the email you can skip this step)
 
 `cd` into your directory in which this project has been cloned too.
 
