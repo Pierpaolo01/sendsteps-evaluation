@@ -1,16 +1,18 @@
 # sendsteps-evaluation
 Firstly thank you for taking the time to view this project!
 
-You are viewing this in gitfront.io console. (which ensures this private repository cannot be seen by people without this URL)
-therefore step 1 is to clone this project to your local machine
+## step 1 clone this project to your local machine
 
-`git clone CLONE_URL` (if you are downloading the zip files from the email you can skip this step)
+`git clone CLONE_URL`
 
+## step 2
 `cd` into your directory in which this project has been cloned too.
 
-quick note: this is a monorepo, therefore for your simplicity in the root please run `npm install`
+## step 3
+run `npm install` in the root of the project
 
-and finally to get all systems up and running run the following 2 commands:
+## step 4
+and finally to get all systems up and running run the following 2 commands in the root of the project (in different terminals):
 
 `npm run start:api`
 
