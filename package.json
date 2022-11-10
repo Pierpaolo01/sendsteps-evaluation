@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "start:client": "cd client-word-pattern && npm start",
+    "start:client": "cd client-word-pattern && npm run start:client",
     "start:api": "node api-word-pattern/src/app.js -p3333",
     "build": "cd client-word-pattern && react-scripts build",
     "start:dev": "nodemon api-word-pattern/src/app.js"
