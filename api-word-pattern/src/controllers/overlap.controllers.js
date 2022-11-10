@@ -8,6 +8,8 @@ const examineOverlap = (req, res) => {
         return;
     }
 
+    console.log('wow')
+
     const mainWordArray = req.body.mainWord.split('');
     const overlapWordArray = req.body.overlapWord.split('');
 

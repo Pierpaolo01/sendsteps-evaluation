@@ -62,6 +62,7 @@ export default function FormComponent({onSuccessResponse}) {
                             if (err.param === 'mainWord' ) {
                                 return err.msg;
                             }
+                            return '';
                         })}
                     </span>
                 </div>
@@ -81,6 +82,7 @@ export default function FormComponent({onSuccessResponse}) {
                             if (err.param === 'overlapWord' ) {
                                 return err.msg;
                             }
+                            return '';
                         })}
                     </span>
                 </div>
