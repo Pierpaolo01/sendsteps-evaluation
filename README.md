@@ -3,10 +3,10 @@ Firstly thank you for taking the time to view this project!
 
 ## step 1 clone this project to your local machine
 
-`git clone CLONE_URL`
+`git clone https://github.com/Pierpaolo01/sendsteps-evaluation.git`
 
 ## step 2
-`cd` into your directory in which this project has been cloned too.
+`cd sendsteps-evaluation` change into your directory in which this project has been cloned too.
 
 ## step 3
 run `npm install` in the root of the project
