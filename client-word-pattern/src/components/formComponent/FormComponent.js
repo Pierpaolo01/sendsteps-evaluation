@@ -1,11 +1,11 @@
 import './FormComponent.css'
-import {useState} from "react";
 import CardComponent from "../cardComponent/CardComponent";
+import React, { useState } from "react";
 
 export default function FormComponent({onSuccessResponse}) {
     const [form, setForm ] = useState({
-        mainWord: '',
-        overlapWord: ''
+        word1: '',
+        word2: ''
     });
 
     const [validationError, setValidationError] = useState([]);
@@ -52,14 +52,14 @@ export default function FormComponent({onSuccessResponse}) {
                     <input
                         id="main-word"
                         type="text"
-                        name="mainWord"
+                        name="word1"
                         placeholder="e.g. device"
-                        value={form.mainWord}
+                        value={form.word1}
                         onChange={handleFormChange}
                     />
                     <span className="word-form__validation-error">
                         { validationError.map((err) => {
-                            if (err.param === 'mainWord' ) {
+                            if (err.param === 'word1' ) {
                                 return err.msg;
                             }
                             return '';
@@ -72,14 +72,14 @@ export default function FormComponent({onSuccessResponse}) {
                     <input
                         id="overlap-word"
                         type="text"
-                        name="overlapWord"
+                        name="word2"
                         placeholder="e.g. ice"
-                        value={form.overlapWord}
+                        value={form.word2}
                         onChange={handleFormChange}
                     />
                     <span className="word-form__validation-error">
                         { validationError.map((err) => {
-                            if (err.param === 'overlapWord' ) {
+                            if (err.param === 'word2' ) {
                                 return err.msg;
                             }
                             return '';

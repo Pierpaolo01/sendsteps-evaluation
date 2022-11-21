@@ -1,8 +1,7 @@
 import './App.css';
-
 import FormComponent from "./components/formComponent/FormComponent";
-import {useState} from "react";
 import ResultComponent from "./components/resultComponent/ResultComponent";
+import React, {useState} from "react";
 
 function App() {
     const [wordOverlapResult, setWordOverlapResult] = useState([]);

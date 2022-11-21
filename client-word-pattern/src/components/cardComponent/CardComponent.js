@@ -1,3 +1,4 @@
+import React from "react";
 import './cardComponent.css'
 
 export default function CardComponent({title, description, children}) {

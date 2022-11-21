@@ -8,8 +8,15 @@ const examineOverlap = (req, res) => {
         return;
     }
 
-    const mainWordArray = req.body.mainWord.split('');
-    const overlapWordArray = req.body.overlapWord.split('');
+    const { word1, word2 } = req.body
+
+    const mainWordArray = word1.length > word2.length
+        ? word1.split('')
+        : word2.split('');
+
+    const overlapWordArray = word1.length < word2.length
+        ? word1.split('')
+        : word2.split('');
 
     let overlapResult = [];
 
@@ -22,7 +29,8 @@ const examineOverlap = (req, res) => {
         });
     }
 
-    res.status(200)
+    res
+        .status(200)
         .json(Array.from(new Set(overlapResult)));
 }
 
